@@ -1,0 +1,55 @@
+{% extends 'base.html' %} 
+ 
+{% block content %} 
+
+<body>
+    <div class="container mt-5">
+        <div class="row text-center d-flex justify-content-center ">
+             <div class="col-sm-3">
+              <a href="{% url 'showphone'%}" style="text-decoration:none;">
+                <div class="card">
+                    <div class="card-body" style="background-color:#B5C0D0">
+                        <i class="fa-solid fa-mobile text-center" style="font-size: 60px;"></i>
+                            <h5> Mobiles </h5>
+                    </div>
+                </div>
+              </a>
+             </div>
+             
+                <div class="col-sm-3 ">
+                 <a href="{% url 'showplants' %}" style="text-decoration:none;">
+                   <div class="card">
+                       <div class="card-body" style="background-color: #4F6F52;">
+                           <i class="fa-solid fa-leaf text-cente" style="font-size: 60px;"></i>
+                               <h5> Plants </h5>
+                       </div>
+                   </div>
+                 </a>
+                </div>
+             
+        </div>
+
+        <div class="row text-center d-flex justify-content-center mt-2">
+            <div class="col-sm-3">
+               <div class="card">
+                   <div class="card-body" style="background-color: #EED3D9;">
+                       <i class="fa-solid fa-book-open text-center" style="font-size: 60px;"></i>
+                          <h5> Books </h5>
+                   </div>
+               </div>
+            </div>
+
+            <div class="col-sm-3">
+               <div class="card">
+                   <div class="card-body" style="background-color: #B19470;">
+                       <i class="fa-solid fa-mug-hot text-center" style="font-size: 60px;"></i>
+                           <h5>Coffee</h5>
+                   </div>
+               </div>
+            </div>
+            
+       </div>
+    </div>
+</body>
+ 
+{% endblock %}

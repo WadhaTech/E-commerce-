@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+ 
+{% block content %} 
+
+<div class="container text-center p-3 d-flex justify-content-between align-items-center">
+<div class="card mt-5">
+   <div class="card-body" style="background-color: rgba(212, 201, 201, 0.331);">
+      <div class="mt-5">
+         <form method="post" class="form-group">
+            {%csrf_token%}
+            {{form.as_p}}
+
+            <div class="pt-2">
+              <strong>ليس لديك حساب !<a href="{% url 'auth_register' %}"> سجل الأن </strong>
+            </div>
+
+            <button class="btn btn-success mt-3" type="submit">Login</button>
+         </form>
+       </div>
+   </div>
+</div>
+</div>
+{% endblock %}
