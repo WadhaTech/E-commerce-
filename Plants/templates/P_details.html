@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %} 
+
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+                <div class="card ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {% for item in plant %}
+                            <div class="images p-1">
+                                <div class="text-center p-4"> <img id="main-image" src="/static/images/{{item.image}}" width="300" /> </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="product p-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center"> 
+                                        <i class="fa fa-long-arrow-left"></i> 
+                                        <a href="{% url 'showplants' %}">Back</a> 
+                                    </div> 
+                                    <i class="fa fa-shopping-cart text-muted"></i>
+                                </div>
+                            
+
+                                <h4 class="text-uppercase title text-dark mt-3 "><span><strong>{{item.itemsid.name}}</strong></span></h4>
+                                <P><small class="text-success">{{item.qty}} in stock</small></P><h6 class="price d-flex flex-row align-items-center"><span class="act-price"><strong>{{item.price}} SAR</strong></span></h6>
+                                    
+
+                                <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
+                                <div class="sizes mt-5">
+                                    <h6 class="text-uppercase">Length</h6> <label class="radio"> <input type="radio" checked> {{item.length}} 
+                                </div>
+                                <div class="cart mt-4 align-items-center"> 
+                                <a href="{% url 'add_to_cart' id=item.id %}" class="btn text-uppercase mr-2 px-4" style="color: #000; background-color: #ffc0cb" >Add to cart</a> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                                <a href="{% url 'checkout' %}" style="color: #000; background-color: #fff; border: 2px solid #ffc0cb" class="btn hero__cta btn-sm mr-2 mt-2" tabindex="0">
+                                    BUY IT NOW
+                                  </a>
+
+                            </div>
+                            
+                           
+                 
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

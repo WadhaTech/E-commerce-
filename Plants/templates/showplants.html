@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<header>
+ <!-- Background image -->
+ <div
+ class="p-5 text-center bg-image"
+ style="
+   background-image: url('http://www.plantstudio.ae/cdn/shop/files/iStock-1278038594_1512x.jpg?v=1692365017');
+   height:1000px;"
+ 
+>
+ <div class="mask" style="background-color: rgba(0, 0, 0, 0.331);">
+   <div class="d-flex justify-content-center align-items-center h-100">
+     <div class="text-white">
+       <h1 class="mb-3">New Arrivals</h1>
+       <h4 class="mb-3">Explore</h4>
+       <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button"
+       >Shop Now </a>
+     </div>
+   </div>
+ </div>
+</div>
+<div class="text-dark text-center">
+ <h1 class="mb-3 mt-5">Well Potted Plants</h1>
+ <h5 class="mb-3">We're your online houseplant destination. We offer a wide range of houseplants and accessories shipped 
+   directly to you!</h5>
+
+</div>
+<!-- Background image --></header>
+
+<div class="container">
+{% for item in plant %}
+<div class="row mt-3 text-center d-flex justify-content-center">
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="../static/images/{{item.image}}" class="img-thumbnail">
+          </div>
+          <div class="col-sm-9">
+            <ul class="list-unstyled">
+              <li><h4 class="alert alert-secondary">{{item.itemsid.name}}</h4></li>
+              <li><strong>{{item.price}} SAR</strong></li>
+            </ul>
+            <div class="row ">
+              <div class="col-sm-12">
+                  <a href="{% url 'P_details' id=item.id %}" class="btn btn-dark" >Product Details</a>
+              </div>
+          </div>
+
+        </div>
+    
+    
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+
+
